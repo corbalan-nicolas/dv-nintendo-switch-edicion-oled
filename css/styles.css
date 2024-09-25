@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --text-color: #fcfcfc;
+    --bg-color: #1c0f0f;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #fcfcfc;
+        --bg-color: #333333;
+    }
+} */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--bg-color);
+
+    /* Texto */
+    font-family: "Nunito", sans-serif;
+    color: var(--text-color);
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+header,
+main,
+footer {
+    max-width: 1680px; /* La resolución máxima */
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    line-height: 1.3em;
+    text-wrap: balance;
+    padding: 1.2em;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+p {
+    text-wrap: pretty;
+    padding: 1em;
+    max-width: 700px;
+    margin: auto;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main img {
+    width: 100%;
+}
+
+.banner img {
+    width: 80%;
+}
+
+.display-none {
+    display: none;
+}
+
+/* .bg-header {
+    width: 100%;
+
+    background: linear-gradient(to right, #00bce1 50%, #ff4431 50%);
+    color: #fff7fb;
+} */
+
+/* .logo {
+    padding-right: 5px;
+    height: 80px;
+} */
+
+.banner {
+    padding-bottom: 4em;
+    /*background: black url("../elementos-graficos/img/elementos-decorativos/mario-difuminado-cubierto-con-caja-negra.jpg") no-repeat center center;*/
+    background: #050a0d url("../elementos-graficos/img/elementos-decorativos/diez-anios-en-portadas.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.nav-pcpal__ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    list-style: none;
+}
+
+.nav-pcpal__ul li {
+    margin: 0.3em 0.5em;
+    padding: 0.3em 0.5em;
+    background-color: black;
+    border-bottom: 1px solid black;
+    border-radius: 0.3em;
+
+    &:hover {
+        border-bottom: 1px solid white;
+    }
+}
+
+.nav-pcpal__ul a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.caja-transparente {
+    background-color: rgba(0,0,0,0.7);
+    max-width: 600px;
+    margin: 3em atuo;
+}
+
+.caja-roja {
+    background-color: #ff4431;
+    border-radius: 1em;
+}
+
+.contenedor-mini-cajas {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em auto;
+    border-radius: 1em;
+}
+
+.mini-caja {
+    background-color: var(--text-color);
+    color: #333333;
+    border: 1px solid red;
+    width: 70%;
+    border-radius: 1em;
+    margin: 1em auto;
+    text-align: center;
+}
+
+#introduccion {
+    background: #00bce1 linear-gradient(to bottom #01a3c2 20%, #00bce1);
+    color: #333;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.galeria > img {
+    margin: 1em 0;
+    width: 45%;
+}
+
+form {
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: 500px;
+}
+
+input, button, textarea {
+    width: 100%;
+    border-radius: 0.3em;
+    padding: 1em;
+}
+
+input, button {
+    height: 3em
+}
+
+form div, form button {
+    margin: 1em 0;
+}
+
+textarea {
+    resize: none;
+    height: 10em;
+}
+
+button {
+    border: none;
+    background-color: #ff4431;
+    color: var(--text-color);
+}
+
+.scroll-btn {
+    font-size: 0;
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+    background: #ff4431 url("../elementos-graficos/img/subir.png") no-repeat center center;
+}
+
+.bg-footer {
+    background-color: #242424;
+    padding: 2em 0;
+    margin-top: 2em;
+}
+footer ul {
+    text-align: center;
+    list-style: none;
+}
+
+li.nombre {
+    font-size: 1.4em;
+}
+
+li.fecha-nacimiento {
+    color: gray;
+    font-size: 0.8em;
+}
+
+@media (width >= 768px) {
+    /* RESOLUCIÓN: TABLET */
+    .banner h1 {
+        text-align: center;
+    }
+
+    .galeria > img {
+        margin: 1em 0;
+        width: 30%;
+    }
+
+    #caracteristicasPcpales > div{
+        display: flex;
+        border: 1px solid red;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #caracteristicasPcpales > div > div, #caracteristicasPcpales > div > img {
+        width: 40%;
+        border: 1px solid red;
+    }
+}
+
+@media (width >= 1280px) {
+    /* RESOLUCIÓN: PC */
+    .banner {
+        padding: 3em 1em;
+    }
+    .banner > div {
+        display: flex;
+        align-items: center;
+    }
+    .banner h1 {
+        font-size: 4em;
+    }
+    .banner img {
+        width: 80%;
+        margin: 3em;
+    }
+
+    #introduccion .caja-transparente {
+        margin-left: 13%;
+        padding: 1em;
+    }
+
+    .contenedor-mini-cajas {
+        width: 70%;
+    }
+
+    .mini-caja {
+        width: 25%;
+    }
+
+    .galeria > img {
+        margin: 1em 0;
+        width: 22%;
+    }
+}

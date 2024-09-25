@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* :root {
+    --text-color: #fcfcfc;
+    --bg-color: #1c0f0f;
+} */
+
+/* @media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #fcfcfc;
+        --bg-color: #333333;
+    }
+} */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--bg-color);
+
+    /* Texto */
+    font-family: "Nunito", sans-serif;
+    background-color: #050a0d;
+    color: rgba(255,255,255, 9);
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+header,
+main,
+footer {
+    max-width: 1680px; /* La resolución máxima */
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    line-height: 1.3em;
+    text-wrap: balance;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 4.5em;
+}
+
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+.contenedor-textos {
+    max-width: 650px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.display-none {
+    display: none;
+}
+
+.bg-header {
+    width: 100%;
+
+    background: linear-gradient(to right, #00bce1 50%, #ff4431 50%);
+    color: #fff7fb;
+}
+
+.logo {
+    padding-right: 5px; /* Centrar los controles del logo en el gradiente */
+    height: 80px;
+}
+
+.nav-pcpal__ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    list-style: none;
+}
+
+.nav-pcpal__ul li {
+    margin: 0.3em 0.5em;
+    padding: 0.3em 0.5em;
+    background-color: black;
+    border-bottom: 1px solid black;
+    border-radius: 0.3em;
+
+    &:hover {
+        border-bottom: 1px solid white;
+    }
+}
+
+.nav-pcpal__ul a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.btn-cta {
+    background-color: #ff4431;
+    color: white;
+    font-size: 1.05em;
+    padding: 1.3em 1.8em;
+    border: none;
+    border-radius: 8px;
+
+    &::after {
+        content: '>';
+        margin-left: 1em;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #df4231;
+    }
+}
+
+.banner .btn-cta {
+    margin-bottom: 3em;
+}
+
+#controlesJoyCon .btn-cta {
+    display: block;
+    margin: 3em auto 1em auto;
+}
+
+section > p:not(.sosteniendo-controles) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 2em;
+    max-width: 650px;
+}
+#introduccion {
+    background: rgba(0,188,225,1) linear-gradient(180deg, rgba(1,163,194,1) 0%, rgba(0,188,225,1) 63%);
+    color: rgba(0,0,0, 8);
+}
+
+#introduccion strong {
+    color: rgba(0,0,0 1);
+}
+
+#introduccion img {
+    aspect-ratio: 2 / 3;
+}
+
+
+.mini-caja, .caracteristica {
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.mini-caja {
+    border: 3px solid #272727;
+    max-width: 400px;
+}
+
+.mini-caja img, .caracteristica img {
+    width: 100%;
+    order: -1;
+}
+
+.mini-caja .contenedor-textos, .caracteristica .contenedor-textos {
+    padding: 2rem 1.5rem;
+}
+
+#galeria {
+    /* Todas las imagenes miden 940px 492px */
+    background-color: #ee523f;
+    position: relative;
+    padding-bottom: 170px;
+}
+
+.galeria {
+    list-style: none;
+    width: 940px;
+    height: 492px;
+    margin: 0px auto;
+    /* border: 1px solid blue; */
+}
+
+.galeria img {
+    border-radius: 8px;
+}
+
+.sosteniendo-controles {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* width: 1350px; */
+    width: 100%;
+    height: 290px;
+    z-index: 20;
+    border: 1px solid blue;
+    font-size: 0px;
+    background: url("../elementos-graficos/img/decorativos/sosteniendo-controles.webp") no-repeat center bottom;
+}
+
+#caracteristicasPcpales {
+    background: rgba(0,188,225,1) linear-gradient(180deg, rgba(1,163,194,1) 0%, rgba(0,188,225,1) 63%);
+    color: #242424;
+}
+
+.caracteristica {
+    border: 2px solid white;
+    background-color: #2b2223;
+    color: rgba(255,255,255,.9);
+    max-width: 450px;
+}
+@media (width >= 768px) {
+    /* RESOLUCIÓN: TABLET */
+}
+
+@media (width >= 1280px) {
+    /* RESOLUCIÓN: PC */
+    section {
+        padding: 2em 1em;
+    }
+    #introduccion {
+        /* padding: 2em 1em; */
+
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+
+        & .contenedor-imagen {
+            padding-top: 5em;
+
+            /* Este diseño muestra 4 nubes encima de la nintendo switch */
+            background-image: url("../elementos-graficos/img/decorativos/nube.webp"), url("../elementos-graficos/img/decorativos/nube-chica.webp"), url("../elementos-graficos/img/decorativos/nube.webp"), url("../elementos-graficos/img/decorativos/nube-chica.webp");
+            background-repeat: no-repeat;
+            background-position: 5% top, 25% 2em, 80% top, 95% 2em;
+        }
+    }
+
+    #tresModosDeJugar > div, #controlesJoyCon > div, .contenedor-caracteristicas {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        border: 1px solid red;
+    }
+
+    .contenedor-caracteristicas {
+        flex-wrap: wrap;
+    }
+}
