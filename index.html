@@ -29,7 +29,7 @@
 
     <div>
       <h1>Nintendo Switch<br>Edición OLED</h1>
-      <button class="btn-cta btn-margin-top" onclick="btnComprar()">Comprar</button>
+      <button class="btn btn--cta" onclick="btnComprar()">Comprar</button>
 
     </div>
   </div>
@@ -78,7 +78,10 @@
     </div>
   </section>
   <section id="galeria">
-    <h2 class="display-none">Experiencias increíbles</h2>
+    <div class="contenedor-textos">
+      <h2>Más de 5000 juegos</h2>
+      <p>Y seguimos contando...</p>
+    </div>
     <div class="contenedor-galeria">
       <ul class="galeria">
         <li><img src="elementos-graficos/img/galeria/captura-01.webp" alt="Captura numero 1"></li>
@@ -121,7 +124,7 @@
         <img alt="Hombre usando la consola" src="elementos-graficos/img/controles-joy-con/intenta-algo-nuevo.webp">
       </div>
     </div>
-    <button class="btn-cta" onclick="btnComprar()">Comprar</button>
+    <button class="btn btn--cta" onclick="btnComprar()">Comprar</button>
   </section>
   <section id="caracteristicasPcpales">
     <h2>Caracteristicas principales</h2>
@@ -182,7 +185,6 @@
   <section id="contactanos">
     <h2>Contactanos</h2>
     <form action="#" method="POST">
-      <!-- Como mínimo debe incluir: email, telefono, comentario -->
       <div>
         <label for="email">Email</label>
         <input id="email" name="email" type="email" required>
@@ -195,7 +197,7 @@
         <label for="comentario">Comentario</label>
         <textarea id="comentario" name="comentario" required></textarea>
       </div>
-      <button onclick="btnComprar()">Enviar</button>
+      <button class="btn btn--enviar" onclick="btnComprar()">Enviar</button>
     </form>
   </section>
 
@@ -204,7 +206,7 @@
 
 <div class="bg-footer">
   <footer>
-    <ul>
+    <ul class="datos-personales">
       <li class="foto"><img
         alt="Foto de Corbalan Nicolas, desarrollador de este sitio web"
         src="elementos-graficos/img/corbalan-nicolas.webp"

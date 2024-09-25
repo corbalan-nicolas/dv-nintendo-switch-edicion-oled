@@ -52,11 +52,11 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 4.5em;
+    font-size: 3.5em;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -70,6 +70,7 @@ p {
 
 .contenedor-textos {
     max-width: 650px;
+    margin: auto;
 }
 
 img {
@@ -92,6 +93,10 @@ img {
 .logo {
     padding-right: 5px; /* Centrar los controles del logo en el gradiente */
     height: 80px;
+}
+
+.banner {
+    padding: 1em .8em 2em;
 }
 
 .nav-pcpal__ul {
@@ -119,13 +124,20 @@ img {
     color: var(--text-color);
 }
 
-.btn-cta {
-    background-color: #ff4431;
+.btn {
     color: white;
-    font-size: 1.05em;
-    padding: 1.3em 1.8em;
-    border: none;
+    font-size: 1em;
+    padding: 1em 1.8em;
     border-radius: 8px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn--cta {
+    border: none;
+    background-color: #ff4431;
 
     &::after {
         content: '>';
@@ -133,38 +145,66 @@ img {
     }
 
     &:hover {
-        cursor: pointer;
         background-color: #df4231;
     }
 }
 
-.banner {
-    padding: 3em 6em;
-}
-
-#controlesJoyCon .btn-cta {
+.btn--enviar {
     display: block;
-    margin: 3em auto 1em auto;
+    margin: 1.5em auto;
+    border: 2px solid white;
+    background-color: rgba(255,255,255, 0);
+
+    &:hover {
+        background-color: rgba(255,255,255, .2);
+    }
 }
 
+#controlesJoyCon .btn {
+    display: block;
+    margin: 0 auto 3em auto;
+}
+
+
+section {
+    padding: 2em 0em;
+}
 section > p:not(.sosteniendo-controles) {
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 2em;
+    margin: 0 auto 2em;
     text-align: center;
-    margin-bottom: 2em;
     max-width: 650px;
 }
+
 #introduccion {
+    padding: 2em 1em;
     background: rgba(0,188,225,1) linear-gradient(180deg, rgba(1,163,194,1) 0%, rgba(0,188,225,1) 63%);
     color: rgba(0,0,0, 8);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1em;
+
+    & .contenedor-imagen {
+        padding-top: 5em;
+        max-width: 940px;
+        margin: auto;
+
+        /* Este diseño muestra 4 nubes encima de la nintendo switch */
+        background-image: url("../elementos-graficos/img/decorativos/nube.webp"), url("../elementos-graficos/img/decorativos/nube-chica.webp"), url("../elementos-graficos/img/decorativos/nube.webp"), url("../elementos-graficos/img/decorativos/nube-chica.webp");
+        background-repeat: no-repeat;
+        background-position: 5% top, 35% 2em, 75% top, 95% 2em;
+        /* background-position: 5% top, 25% 2em, 80% top, 95% 2em; */
+    }
+}
+
+#introduccion img {
+    aspect-ratio: 694 / 293;
+    width: 90%;
+    height: auto;
 }
 
 #introduccion strong {
     color: rgba(0,0,0 1);
-}
-
-#introduccion img {
-    aspect-ratio: 2 / 3;
 }
 
 
@@ -172,6 +212,7 @@ section > p:not(.sosteniendo-controles) {
     display: flex;
     border-radius: 8px;
     flex-direction: column;
+    margin: 0 auto 3em;
 }
 
 .mini-caja {
@@ -182,9 +223,13 @@ section > p:not(.sosteniendo-controles) {
 .mini-caja img, .caracteristica img {
     width: 100%;
     order: -1;
+    border-radius: 8px 8px 0 0;
 }
 
-.mini-caja .contenedor-textos, .caracteristica .contenedor-textos {
+/* .mini-caja .contenedor-textos, .caracteristica .contenedor-textos {
+    padding: 2rem 1.5rem;
+} */
+.contenedor-textos {
     padding: 2rem 1.5rem;
 }
 
@@ -192,18 +237,18 @@ section > p:not(.sosteniendo-controles) {
     /* Todas las imagenes miden 940px 492px */
     background-color: #ee523f;
     position: relative;
-    padding-bottom: 170px;
+    padding-bottom: 4em;
+    text-align: center;
 }
 
 .galeria {
     list-style: none;
-    width: 940px;
-    height: 492px;
     margin: 0px auto;
 }
 
-.galeria img {
-    border-radius: 8px;
+.galeria img, .galeria {
+    width: 420px !important; /* Necesito usar !important por los estilos del cycle */
+    aspect-ratio: 420 / 220;
 }
 
 .sosteniendo-controles {
@@ -212,12 +257,12 @@ section > p:not(.sosteniendo-controles) {
     bottom: 0;
     left: 0;
     right: 0;
-    /* width: 1350px; */
     width: 100%;
-    height: 290px;
+    height: 130px;
     z-index: 20;
     font-size: 0px;
-    background: url("../elementos-graficos/img/decorativos/sosteniendo-controles.webp") no-repeat center bottom;
+    background: url("../elementos-graficos/img/decorativos/sosteniendo-controles.webp") no-repeat center top;
+    background-size: auto 100%;
 }
 
 #caracteristicasPcpales {
@@ -225,38 +270,141 @@ section > p:not(.sosteniendo-controles) {
     color: #242424;
 }
 
+.scroll-btn {
+    font-size: 0px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid #ee523f;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+
+    background: rgba(0,0,0, .7) url("../elementos-graficos/img/subir.png") no-repeat center center;
+
+    &:hover {
+        background-color: rgba(255,255,255, .2)
+    }
+}
+
+.contenedor-caracteristicas {
+    padding: 0 1em;
+}
+
 .caracteristica {
     border: 2px solid white;
     background-color: #2b2223;
     color: rgba(255,255,255,.9);
-    max-width: 450px;
+    max-width:450px;
 }
+
+form{
+    max-width: 700px;
+    padding: 0 1.5em;
+    margin: 0px auto;
+}
+
+form div {
+    width: 100%;
+    margin-bottom: 1.2em;
+}
+
+form div:nth-child(3) {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em 0.8em;
+    border-radius: 8px; */
+}
+
+form textarea {
+    font-size: 1.2em;
+    resize: none;
+    height: 9em;
+}
+
+.datos-personales {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4em auto 1em;
+}
+
+.datos-personales li {
+    margin-bottom: .5em;
+}
+
+.nombre {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+.fecha-nacimiento {
+    color: rgba(255,255,255, .5);
+}
+
+a {
+    color: rgb(157, 157, 249);
+
+    &:hover {
+        color: rgb(106, 106, 234);
+    }
+}
+
 @media (width >= 768px) {
     /* RESOLUCIÓN: TABLET */
+    .galeria img, .galeria {
+        width: 600px !important;
+        border-radius: 8px;
+    }
+
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    form div {
+        width: 45%;
+    }
+
+    form div:nth-child(3) {
+        width: 100%;
+    }
+
+    .datos-personales {
+        height: 250px;
+        max-width: 30em;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
 }
 
 @media (width >= 1280px) {
-    /* RESOLUCIÓN: PC */
+    /* RESOLUCIÓN: PC GRANDE */
+    .banner {
+        padding: 3em 6em;
+    }
+
     section {
         padding: 2em 1em;
     }
     #introduccion {
-        /* padding: 2em 1em; */
+        padding: 2em 1em;
 
-        display: flex;
         flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
         gap: 3em;
-
-        & .contenedor-imagen {
-            padding-top: 5em;
-
-            /* Este diseño muestra 4 nubes encima de la nintendo switch */
-            background-image: url("../elementos-graficos/img/decorativos/nube.webp"), url("../elementos-graficos/img/decorativos/nube-chica.webp"), url("../elementos-graficos/img/decorativos/nube.webp"), url("../elementos-graficos/img/decorativos/nube-chica.webp");
-            background-repeat: no-repeat;
-            background-position: 5% top, 25% 2em, 80% top, 95% 2em;
-        }
     }
 
     #tresModosDeJugar > div, #controlesJoyCon > div, .contenedor-caracteristicas {
@@ -265,7 +413,25 @@ section > p:not(.sosteniendo-controles) {
         gap: 2em;
     }
 
+    #galeria {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .galeria img, .galeria {
+        width: 940px !important;
+    }
+
+    .sosteniendo-controles {
+        background-position-x: 80px;
+        height: 170px;
+    }
+
     .contenedor-caracteristicas {
         flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
