@@ -4,7 +4,7 @@ function btnComprar(){
 
 $(".galeria").cycle({
     fx: 'fade',
-    speed: 1000,
-    timeout: 2000,
+    speed: 500,
+    timeout: 700,
     pause: false
 });
