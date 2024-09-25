@@ -113,10 +113,6 @@ img {
     background-color: black;
     border-bottom: 1px solid black;
     border-radius: 0.3em;
-
-    &:hover {
-        border-bottom: 1px solid white;
-    }
 }
 
 .nav-pcpal__ul a {
@@ -129,10 +125,6 @@ img {
     font-size: 1em;
     padding: 1em 1.8em;
     border-radius: 8px;
-
-    &:hover {
-        cursor: pointer;
-    }
 }
 
 .btn--cta {
@@ -143,10 +135,6 @@ img {
         content: '>';
         margin-left: 1em;
     }
-
-    &:hover {
-        background-color: #df4231;
-    }
 }
 
 .btn--enviar {
@@ -154,10 +142,6 @@ img {
     margin: 1.5em auto;
     border: 2px solid white;
     background-color: rgba(255,255,255, 0);
-
-    &:hover {
-        background-color: rgba(255,255,255, .2);
-    }
 }
 
 #controlesJoyCon .btn {
@@ -247,7 +231,8 @@ section > p:not(.sosteniendo-controles) {
 }
 
 .galeria img, .galeria {
-    width: 420px !important; /* Necesito usar !important por los estilos del cycle */
+    /* Necesito usar !important por los estilos del cycle */
+    width: 400px !important;
     aspect-ratio: 420 / 220;
 }
 
@@ -279,13 +264,10 @@ section > p:not(.sosteniendo-controles) {
     border: 2px solid #ee523f;
     position: fixed;
     right: 30px;
-    bottom: 50px;
+    top: 85svh;
+    z-index: 30;
 
     background: rgba(0,0,0, .7) url("../elementos-graficos/img/subir.png") no-repeat center center;
-
-    &:hover {
-        background-color: rgba(255,255,255, .2)
-    }
 }
 
 .contenedor-caracteristicas {
@@ -350,7 +332,7 @@ form textarea {
     color: rgba(255,255,255, .5);
 }
 
-a {
+.datos-personales a {
     color: rgb(157, 157, 249);
 
     &:hover {
@@ -360,6 +342,13 @@ a {
 
 @media (width >= 768px) {
     /* RESOLUCIÓN: TABLET */
+    #tresModosDeJugar > div, #controlesJoyCon > div, .contenedor-caracteristicas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+    }
+
     .galeria img, .galeria {
         width: 600px !important;
         border-radius: 8px;
@@ -407,12 +396,6 @@ a {
         gap: 3em;
     }
 
-    #tresModosDeJugar > div, #controlesJoyCon > div, .contenedor-caracteristicas {
-        display: flex;
-        justify-content: center;
-        gap: 2em;
-    }
-
     #galeria {
         display: flex;
         flex-direction: row-reverse;
@@ -433,5 +416,29 @@ a {
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* HOVERS */
+    .nav-pcpal li:hover {
+            border-bottom: 1px solid white;
+        }
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+    .scroll-btn:hover {
+        /* background-color: rgba(255,255,255, .2); */
+        outline: 1px solid rgba(255,255,255,.8);
+        outline-offset: -5px;
+    }
+
+    .btn--cta:hover {
+        background-color: #df4231;
+    }
+
+    .btn--enviar:hover {
+        background-color: rgba(255,255,255, .2);
     }
 }
