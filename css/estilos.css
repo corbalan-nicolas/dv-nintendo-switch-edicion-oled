@@ -264,7 +264,7 @@ section > p:not(.sosteniendo-controles) {
     border: 2px solid #ee523f;
     position: fixed;
     right: 30px;
-    top: 85svh;
+    top: 85dvh;
     z-index: 30;
 
     background: rgba(0,0,0, .7) url("../elementos-graficos/img/subir.png") no-repeat center center;
